@@ -1,0 +1,21 @@
+{% extends "master.html" %}
+
+{% block title %}
+Favorite Boks
+{% endblock %}
+
+{% block content %}
+
+<section class="bk-list">
+  <h1>Favorite Books</h1>
+  <ul>
+    {% for book in books %}
+    <li><a href="{% url 'book_detail' book.pk %}">{{book.title}}</a> by {{book.author}}</li>
+    {% endfor %}
+    <li><a href="{% url 'book_list' %}"></a></li>
+  </ul>
+
+  <!-- <p><a href="{% url '/' %}">Go back to Home</a></p> -->
+</section>
+
+{% endblock %}
